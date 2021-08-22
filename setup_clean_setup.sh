@@ -69,7 +69,7 @@ fi
 
 # file
 cd ..
-mv Setup\ Clean\ Swift/Clean\ Swift\ Setup ${PROJECT}
+mv Setup-Clean-Swift/Clean\ Swift\ Setup ${PROJECT}
 
 # check if the project exists & if it's a directory
 if [[ -e $PROJECT && -d $PROJECT ]]
@@ -96,4 +96,4 @@ fi
 
 # Finish
 echo "Thank your for using my tool :)"
-rm -rf Setup\ Clean\ Swift
+rm -rf Setup-Clean-Swift
