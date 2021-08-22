@@ -82,8 +82,16 @@ then
 
   # Depends 🤷‍♂️
   # Try to find a way to don't drag and drop
-  echo "––––––––––––––––––––––––––––"
-  echo "Please Drag & Drop the folder Clean-Swift-Setup directory"
+  echo "##############################################################################"
+  echo "#                                                                            #"
+  echo "#                                                                            #"
+  echo "#                                                                            #"
+  echo "#                                                                            #"
+  echo "#                                                                            #"
+  echo "#                                                                            #"
+  echo "#                                                                            #"
+  echo "##############################################################################"
+  echo "If the folder Clean Swift Setup is not in Xcode please drag & drop it in"
   echo "This directory contains all the boilerplate for a Clean Swift setup app"
   open -a Finder $PWD
   open -a Xcode "${PROJECT}.xcworkspace"
@@ -97,3 +105,4 @@ fi
 # Finish
 echo "Thank your for using my tool :)"
 rm -rf Setup-Clean-Swift
+ echo -e '\e]8;;http://example.com\aThis is a hyperlink\e]8;;\a'
