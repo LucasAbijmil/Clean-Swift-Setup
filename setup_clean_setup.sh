@@ -22,7 +22,7 @@ then
   TARGET_TESTS="${TARGET_TESTS_USER}"
   echo "Tests target changed for ${TARGET_TESTS}"
 fi
-  
+
 # Target UITests
 TARGET_UITESTS="${TARGET}UITests"
 read -p "Name of the UITests target is ${TARGET_UITESTS} ? y/n : " TARGET_UITESTS_USER
@@ -86,13 +86,12 @@ then
   echo "#                                                                            #"
   echo "#                                                                            #"
   echo "#                                                                            #"
-  echo "#                                                                            #"
+  echo "#  If the folder Clean Swift Setup is not in Xcode please drag & drop it in  #"
+  echo "#  This directory contains all the boilerplate for a Clean Swift setup app.  #"
   echo "#                                                                            #"
   echo "#                                                                            #"
   echo "#                                                                            #"
   echo "##############################################################################"
-  echo "If the folder Clean Swift Setup is not in Xcode please drag & drop it in"
-  echo "This directory contains all the boilerplate for a Clean Swift setup app"
   open -a Finder $PWD
   open -a Xcode "${PROJECT}.xcworkspace"
 
@@ -102,7 +101,17 @@ else
   echo "Didn't find the project, please try again"
 fi
 
+# try to find the @main file to setup the container
+#cd $PROJECT
+#grep -rnw $PWD -e '@main'
+
 # Finish
-echo "Thank your for using my tool :)"
+echo "##############################################################################"
+echo "#                                                                            #"
+echo "#                        Thank you for using my tool!                        #"
+echo "#                           Author : Lucas Abijmil                           #"
+echo "#                           Twitter : lucas_abijmil                          #"
+echo "#                                                                            #"
+echo "##############################################################################"
+cd ..
 rm -rf Setup-Clean-Swift
- echo -e '\e]8;;http://example.com\aThis is a hyperlink\e]8;;\a'
