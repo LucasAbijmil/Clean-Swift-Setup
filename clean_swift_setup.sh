@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Name of the project & target
-read -p "Name of the project target : " PROJECT
+read -p "Name of the app target : " PROJECT
 TARGET="${PROJECT}"
 
 # min os target
@@ -69,7 +69,7 @@ fi
 
 # file
 cd ..
-mv Setup-Clean-Swift/Clean\ Swift\ Setup ${PROJECT}
+mv Clean-Swift-Setup/Clean\ Swift\ Setup ${PROJECT}
 
 # check if the project exists & if it's a directory
 if [[ -e $PROJECT && -d $PROJECT ]]
@@ -92,7 +92,7 @@ then
   echo "#                                                                            #"
   echo "#                                                                            #"
   echo "##############################################################################"
-  open -a Finder $PWD
+  open -a Finder ${PROJECT}
   open -a Xcode "${PROJECT}.xcworkspace"
 
 # Project was not found
@@ -113,5 +113,4 @@ echo "#                           Author : Lucas Abijmil                        
 echo "#                           Twitter : lucas_abijmil                          #"
 echo "#                                                                            #"
 echo "##############################################################################"
-cd ..
-rm -rf Setup-Clean-Swift
+rm -rf Clean-Swift-Setup
