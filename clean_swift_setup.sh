@@ -110,7 +110,7 @@ echo "##########################################################################
 echo "#                                                                            #"
 echo "#                        Thank you for using my tool!                        #"
 echo "#                           Author : Lucas Abijmil                           #"
-echo "#                           Twitter : lucas_abijmil                          #"
+echo "#                          Twitter : @lucas_abijmil                          #"
 echo "#                                                                            #"
 echo "##############################################################################"
 rm -rf Clean-Swift-Setup
