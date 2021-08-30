@@ -30,6 +30,7 @@ $ ./clean_swift_setup.sh
 3. Then follow the instructions of the script.
 
 ## Improvements
+- Create async await functions for the `NetworkClient`.
 - Find the file that contains the `@main` to add this line : `let container = Container().setup()`.
 - Check the app cycle :
   - If UIKit > Add the possibiilty to remove the Storyboard.
