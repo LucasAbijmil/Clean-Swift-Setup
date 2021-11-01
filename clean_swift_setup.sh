@@ -82,16 +82,16 @@ then
 
   # Depends 🤷‍♂️
   # Try to find a way to don't drag and drop
-  echo "##############################################################################"
-  echo "#                                                                            #"
-  echo "#                                                                            #"
-  echo "#                                                                            #"
-  echo "#  If the folder Clean Swift Setup is not in Xcode please drag & drop it in  #"
-  echo "#  This directory contains all the boilerplate for a Clean Swift setup app.  #"
-  echo "#                                                                            #"
-  echo "#                                                                            #"
-  echo "#                                                                            #"
-  echo "##############################################################################"
+  echo "############################################################################################"
+  echo "#                                                                                          #"
+  echo "#                                                                                          #"
+  echo "#                                                                                          #"
+  echo "#        If the folder Clean Swift Setup is not in Xcode please drag & drop it in.         #"
+  echo "#  This directory contains all the boilerplate for an app using Clean Swift architecture.  #"
+  echo "#                                                                                          #"
+  echo "#                                                                                          #"
+  echo "#                                                                                          #"
+  echo "############################################################################################"
   open -a Finder ${PROJECT}
   open -a Xcode "${PROJECT}.xcworkspace"
 
@@ -106,11 +106,11 @@ fi
 #grep -rnw $PWD -e '@main'
 
 # Finish
-echo "##############################################################################"
-echo "#                                                                            #"
-echo "#                        Thank you for using my tool!                        #"
-echo "#                           Author : Lucas Abijmil                           #"
-echo "#                          Twitter : @lucas_abijmil                          #"
-echo "#                                                                            #"
-echo "##############################################################################"
+echo "##############################################################################################"
+echo "#                                                                                            #"
+echo "#                                Thank you for using my tool!                                #"
+echo "#                                   Author : Lucas Abijmil                                   #"
+echo "#                                  Twitter : @lucas_abijmil                                  #"
+echo "#                                                                                            #"
+echo "##############################################################################################"
 rm -rf Clean-Swift-Setup
