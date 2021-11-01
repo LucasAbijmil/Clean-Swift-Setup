@@ -30,12 +30,11 @@ $ ./clean_swift_setup.sh
 3. Then follow the instructions of the script.
 
 ## Improvements
-- Check if the user has the `cocoapods` gem already installed
-- Kill Xcode and open it with the `.xcworkspace` project
+- Kill Xcode and open it with the `.xcworkspace` project.
 - Find the file that contains the `@main` to add this line : `let container = Container().setup()`.
+- Find a way to avoid adding the `Clean Swift Setup` file by hand.
 - Check the app cycle :
   - If UIKit > Add the possibiilty to remove the Storyboard.
-- Find a way to avoid adding the `Clean Swift Setup` file by hand
 
 ## Author
 

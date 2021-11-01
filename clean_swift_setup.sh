@@ -6,13 +6,15 @@ TARGET="${PROJECT}"
 
 # min os target
 TARGET_DEPLOYMENT=12.0
+## TODO: Provide the format to the user
 read -p "Deployment target : " TARGET_DEPLOYMENT
-echo "Target Deployment is ${TARGET_DEPLOYMENT}"
+echo "Target Deployment is set to ${TARGET_DEPLOYMENT}"
 
 # Check if we should add tests targets
 read -p "Include Tests ? y/n : " TARGET_SHOULD_INCLUDE_TESTS
 if [[ $TARGET_SHOULD_INCLUDE_TESTS = 'y' || $TARGET_SHOULD_INCLUDE_TESTS = 'Y' ]]
 then
+
 # Target Tests
 TARGET_TESTS="${TARGET}Tests"
 read -p "Name of the Tests target is ${TARGET_TESTS} ? y/n : " TARGET_TESTS_USER
@@ -74,15 +76,20 @@ mv Clean-Swift-Setup/Clean\ Swift\ Setup ${PROJECT}
 # check if the project exists & if it's a directory
 if [[ -e $PROJECT && -d $PROJECT ]]
 then
-  # TODO: check if the user the cocoapods gem installed
+  # check if cocoapods gem is already installed or not
+  if ! gem list -i --silent --exact cocoapods
+  then
+  echo "Cocoapods is not installed, preparing the installation"
+  sudo gem install cocoapods
+  fi
+
   # Pod config
   pod init
   rm -f Podfile
   echo "$POD_CONFIG" >> Podfile
   pod install
 
-  # Depends 🤷‍♂️
-  # Try to find a way to don't drag and drop
+  # TODO: FIXME LATER
   echo "############################################################################################"
   echo "#                                                                                          #"
   echo "#                                                                                          #"
@@ -104,10 +111,6 @@ else
   echo "Didn't find the project, please try again"
 fi
 
-# try to find the @main file to setup the container
-#cd $PROJECT
-#grep -rnw $PWD -e '@main'
-
 # Finish
 echo "##############################################################################################"
 echo "#                                                                                            #"
@@ -117,3 +120,6 @@ echo "#                                  Twitter : @lucas_abijmil               
 echo "#                                                                                            #"
 echo "##############################################################################################"
 rm -rf Clean-Swift-Setup
+
+# TODO: wip
+echo "$(grep -rnw $PROJECT -e '@main')"
