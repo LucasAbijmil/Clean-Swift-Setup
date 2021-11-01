@@ -13,7 +13,7 @@ It creates the podfile and pre-built files :
     - ApiRoute.swift : an enum that contains all API routes.
     - URLBuilder.swift : a struct that builds URL using a `ApiRoute`.
   - **Networks** 
-    - NetworkClient.swift : a client that allows you to make API requests using a `ApiRoute`.
+    - NetworkClient.swift : a client that allows you to make API requests using a `ApiRoute`. Supporting async functions.
   - **Services** : 
     - DecoderService.swift : a generic and reusable `JSONDecoder` using `convertFromSnakeCase` as a `keyDecodingStrategy`.
   - Container.swift : an extension on `Container` to setup all the dependencies.
@@ -30,7 +30,6 @@ $ ./clean_swift_setup.sh
 3. Then follow the instructions of the script.
 
 ## Improvements
-- Create async await functions for the `NetworkClient`.
 - Find the file that contains the `@main` to add this line : `let container = Container().setup()`.
 - Check the app cycle :
   - If UIKit > Add the possibiilty to remove the Storyboard.
