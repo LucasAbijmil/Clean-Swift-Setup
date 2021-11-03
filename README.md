@@ -5,18 +5,18 @@ A shell script to setup a project with a container, pre-built files & pods.
 ## Details
 This script automates the setup of a project that uses a container for dependency injection.
 It creates the podfile and pre-built files : 
-- **Podfile** : 
-  - App target : [Swinject](https://github.com/Swinject/Swinject) & [SwinjectAutoregistration](https://github.com/Swinject/SwinjectAutoregistration).
-  - Tests target : [InstantMock](https://github.com/pirishd/InstantMock) & [OHHTTPStubs/Swift](https://github.com/AliSoftware/OHHTTPStubs).
 - **Clean Swift Setup**
   - **Commons** 
     - ApiRoute.swift : an enum that contains all API routes.
     - URLBuilder.swift : a struct that builds URL using a `ApiRoute`.
   - **Networks** 
-    - NetworkClient.swift : a client that allows you to make API requests using a `ApiRoute`. Supporting async functions.
+    - NetworkClient.swift : a client that allows you to make API requests using a `ApiRoute`. Supporting `async` functions.
   - **Services** : 
     - DecoderService.swift : a generic and reusable `JSONDecoder` using `convertFromSnakeCase` as a `keyDecodingStrategy`.
   - Container.swift : an extension on `Container` to setup all the dependencies.
+- **Podfile** : 
+  - App target : [Swinject](https://github.com/Swinject/Swinject) & [SwinjectAutoregistration](https://github.com/Swinject/SwinjectAutoregistration).
+  - Tests target : [InstantMock](https://github.com/pirishd/InstantMock) & [OHHTTPStubs/Swift](https://github.com/AliSoftware/OHHTTPStubs).
 
 ## Installation
 1. Open Xcode and create a new project.
