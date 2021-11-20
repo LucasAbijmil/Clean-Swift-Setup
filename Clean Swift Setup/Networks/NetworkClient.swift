@@ -14,7 +14,7 @@ protocol NetworkClient {
 final class DefaultNetworkClient: NetworkClient {
 
   private enum HTTPError: Error {
-    case server
+    case badReponse
     case noData
   }
 
@@ -39,9 +39,10 @@ final class DefaultNetworkClient: NetworkClient {
     session.dataTask(with: url) { data, response, error in
       if let error = error {
         completion(.failure(error))
+        return
       }
       guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-        completion(.failure(HTTPError.server))
+        completion(.failure(HTTPError.badReponse))
         return
       }
       guard let data = data else {
@@ -57,7 +58,7 @@ final class DefaultNetworkClient: NetworkClient {
     do {
       let (data, response) = try await session.data(from: url)
       guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-        return .failure(HTTPError.server)
+        return .failure(HTTPError.badReponse)
       }
       return .success(data)
     } catch {
