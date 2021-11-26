@@ -74,6 +74,7 @@ mv Clean-Swift-Setup/Clean\ Swift\ Setup ${PROJECT}
 # check if the project exists & if it's a directory
 if [[ -e $PROJECT && -d $PROJECT ]]
 then
+  # TODO: check if the user the cocoapods gem installed
   # Pod config
   pod init
   rm -f Podfile
@@ -93,6 +94,8 @@ then
   echo "#                                                                                          #"
   echo "############################################################################################"
   open -a Finder ${PROJECT}
+  #TODO: We should kill all instances of Xcode
+  #TODO: We should check if Xcode exists in Applications folder
   open -a Xcode "${PROJECT}.xcworkspace"
 
 # Project was not found

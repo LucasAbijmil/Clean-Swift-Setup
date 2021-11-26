@@ -5,12 +5,12 @@
 import Foundation
 
 protocol NetworkClient {
-  func request(route: ApiRoute) async throws -> Data
-  func request(route: ApiRoute) async -> Result<Data, Error>
+  func requestData(route: ApiRoute) async throws -> Data
+  func requestResult(route: ApiRoute) async -> Result<Data, Error>
   func request(route: ApiRoute, completion: @escaping(Result<Data, Error>) -> Void)
   
-  func request(with url: URL) async throws -> Data
-  func request(with url: URL) async -> Result<Data, Error>
+  func requestData(with url: URL) async throws -> Data
+  func requestResult(with url: URL) async -> Result<Data, Error>
   func request(with url: URL, completion: @escaping (Result<Data, Error>) -> Void)
 }
 
@@ -27,14 +27,14 @@ final class DefaultNetworkClient: NetworkClient {
     self.session = session
   }
   
-  func request(route: ApiRoute) async throws -> Data {
+  func requestData(route: ApiRoute) async throws -> Data {
     let url = URLBuilder.url(for: route)
-    return try await request(with: url)
+    return try await requestData(with: url)
   }
   
-  func request(route: ApiRoute) async -> Result<Data, Error> {
+  func requestResult(route: ApiRoute) async -> Result<Data, Error> {
     let url = URLBuilder.url(for: route)
-    return await request(with: url)
+    return await requestResult(with: url)
   }
 
   func request(route: ApiRoute, completion: @escaping(Result<Data, Error>) -> Void) {
@@ -42,16 +42,15 @@ final class DefaultNetworkClient: NetworkClient {
     request(with: url, completion: completion)
   }
   
-  func request(with url: URL) async throws -> Data {
+  func requestData(with url: URL) async throws -> Data {
     let (data, response) = try await session.data(from: url)
     guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
       throw HTTPError.badReponse
     }
-    
     return data
   }
   
-  func request(with url: URL) async -> Result<Data, Error> {
+  func requestResult(with url: URL) async -> Result<Data, Error> {
     do {
       let (data, response) = try await session.data(from: url)
       guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
