@@ -21,9 +21,9 @@ It creates the podfile and pre-built files :
 ## Installation
 1. Open Xcode and create a new project.
 2. Run the following commands : 
-``` sh
+```sh
 $ cd MyProject
-$ git clone git@github.com:LucasAbijmil/Clean-Swift-Setup.git
+$ git clone https://github.com/LucasAbijmil/Clean-Swift-Setup.git
 $ cd Clean-Swift-Setup
 $ ./clean_swift_setup.sh
 ```

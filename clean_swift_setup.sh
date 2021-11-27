@@ -107,7 +107,7 @@ then
 
 # Project was not found
 else
-  # Handle this error later
+  # TODO: Handle this error later
   echo "Didn't find the project, please try again"
 fi
 
