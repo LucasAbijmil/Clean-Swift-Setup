@@ -29,6 +29,9 @@ $ ./clean_swift_setup.sh
 ```
 3. Then follow the instructions of the script.
 
+## Note 
+If you have used this script, these [file templates](https://github.com/LucasAbijmil/Xcode-File-Templates) might be useful to you.
+
 ## Improvements
 - Kill Xcode and open it with the `.xcworkspace` project.
 - Find the file that contains the `@main` to add this line : `let container = Container().setup()`.
